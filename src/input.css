@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("./assets/font/ClashDisplay-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("./assets/font/ClashDisplay-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("./assets/font/ClashDisplay-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("./assets/font/ClashDisplay-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 2. Daftarkan ke sistem tema Tailwind v4 */
+@theme {
+  --font-clash: "Clash Display", sans-serif;
+}
+
+@utility text-gradient-silver {
+  background: linear-gradient(117deg, #FFF 23.69%, #999 76.31%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
