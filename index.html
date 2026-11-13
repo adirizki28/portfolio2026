@@ -10,156 +10,265 @@
 <body>
 
   <!-- Navbar Start -->
-  <header class="sticky top-4 z-50 px-4">
-    <nav
-      class="mx-auto max-w-7xl  backdrop-blur-md text-white px-4 py-2 ">
-      <div class="flex items-center justify-between">
-        <!-- Brand / Nama -->
-        <a href="#" class="font-clash text-xl font-semibold tracking-tight text-black">
-          Adi Rizki
-        </a>
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-neutral-100">
+    <div class="relative mx-auto max-w-[1232px] px-4">
+      <nav class="py-3.5">
+        <div class="flex items-center justify-between">
+          <!-- Brand / Nama -->
+          <a href="#" class="font-clash text-xl font-semibold tracking-tight text-black">
+            Adi Rizki
+          </a>
 
-        <!-- Menu Desktop (Tersembunyi di layar HP) -->
-        <ul class="hidden md:flex items-center gap-8 text-sm text-neutral-300">
-          <li><a href="#hero-section" class="hover:text-white transition">Home</a></li>
-          <li><a href="#projects" class="hover:text-white transition">Projects</a></li>
-          <li><a href="#services" class="hover:text-white transition">Services</a></li>
-          <li><a href="#about" class="hover:text-white transition">About</a></li>
+          <!-- Menu Desktop -->
+          <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-600">
+            <li><a href="#hero-section" class="hover:text-black transition">Home</a></li>
+            <li><a href="#projects" class="hover:text-black transition">Projects</a></li>
+            <li><a href="#services" class="hover:text-black transition">Services</a></li>
+            <li><a href="#about" class="hover:text-black transition">About</a></li>
+          </ul>
+
+          <!-- Tombol CTA Desktop (Kontras hitam di atas background putih) -->
+          <a href="#contact"
+            class="hidden md:inline-flex items-center bg-black text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-neutral-800 transition">
+            Let's Talk
+          </a>
+
+          <!-- Tombol Hamburger Menu (Mobile) -->
+          <button id="menu-btn" aria-label="Toggle Menu"
+            class="md:hidden p-2 rounded-lg text-black hover:bg-neutral-100 focus:outline-none">
+            <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Dropdown Menu Mobile: Menggunakan 'absolute' agar melayang dan TIDAK menggeser Hero Section -->
+      <div id="mobile-menu"
+        class="hidden md:hidden absolute left-4 right-4 top-full mt-2 bg-black/95 backdrop-blur-md text-white rounded-3xl p-6 border border-neutral-800 shadow-2xl z-50">
+        <ul class="flex flex-col gap-4 text-base text-neutral-300">
+          <li><a href="#hero-section" class="block py-1 hover:text-white transition">Home</a></li>
+          <li><a href="#projects" class="block py-1 hover:text-white transition">Projects</a></li>
+          <li><a href="#services" class="block py-1 hover:text-white transition">Services</a></li>
+          <li><a href="#about" class="block py-1 hover:text-white transition">About</a></li>
         </ul>
-
-        <!-- Tombol CTA Desktop -->
-        <a href="#contact"
-          class="hidden md:inline-flex items-center bg-white text-black text-sm font-medium px-5 py-2.5 rounded-full hover:bg-neutral-200 transition">
-          Let's Talk
-        </a>
-
-        <!-- Tombol Hamburger Menu (Hanya muncul di Mobile) -->
-        <button id="menu-btn" aria-label="Toggle Menu"
-          class="md:hidden p-2 rounded-lg text-black hover:bg-neutral-100 focus:outline-none">
-          <!-- Ikon Hamburger (3 garis) -->
-          <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <!-- Ikon Close (X) saat menu terbuka -->
-          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-    </nav>
-
-    <!-- Dropdown Menu Mobile -->
-    <div id="mobile-menu"
-      class="hidden md:hidden mt-2 mx-auto max-w-7xl bg-black/95 backdrop-blur-md text-white rounded-3xl p-6 border border-neutral-800">
-      <ul class="flex flex-col gap-4 text-base text-neutral-300">
-        <li><a href="#hero-section" class="block py-1 hover:text-white transition">Home</a></li>
-        <li><a href="#projects" class="block py-1 hover:text-white transition">Projects</a></li>
-        <li><a href="#services" class="block py-1 hover:text-white transition">Services</a></li>
-        <li><a href="#about" class="block py-1 hover:text-white transition">About</a></li>
-      </ul>
-      <div class="mt-5 pt-4 border-t border-neutral-800">
-        <a href="#contact"
-          class="block w-full text-center bg-white text-black font-medium py-3 rounded-full hover:bg-neutral-200 transition">
-          Let's Talk
-        </a>
+        <div class="mt-5 pt-4 border-t border-neutral-800">
+          <a href="#contact"
+            class="block w-full text-center bg-white text-black font-medium py-3 rounded-full hover:bg-neutral-200 transition">
+            Let's Talk
+          </a>
+        </div>
       </div>
     </div>
   </header>
   <!-- Navbar End -->
 
   <!-- Hero Section -->
-<section id="hero-section" class="p-4 mx-auto max-w-7xl">
-  <div class="bg-black rounded-4xl relative overflow-hidden flex sm:h-[700px] md:h-[550px] xl:h-[550px]">
-    <div class="w-full min-h-[600px] md:min-h-[550px] xl:h-[550px] flex flex-col justify-between p-4 mt-4 md:mt-0 md:p-12
+  <section id="hero-section" class="p-4 mx-auto max-w-7xl">
+    <div class="bg-black rounded-4xl relative overflow-hidden flex sm:h-[700px] md:h-[550px] xl:h-[550px]">
+      <div class="w-full min-h-[600px] md:min-h-[550px] xl:h-[550px] flex flex-col justify-between p-4 mt-4 md:mt-0 md:p-12
       md:grid md:grid-cols-2 gap-[20px] md:items-stretch">
-      
-      <!-- Text Hero (Kolom Kiri) -->
-      <div class="flex flex-col gap-[24px] md:justify-between z-10">
-        <!-- Grup Atas: Greeting + Judul + Tombol -->
-        <div class="flex flex-col gap-[24px]">
-          <div class="flex flex-col gap-2 justify-center p-2 mt-4 lg:mt-0 lg:p-0">
-            <p class="text-white text-center md:text-left md:text-xl">Hallo, I'm Adi Rizki</p>
-            <h1 class="font-clash font-medium text-[40px] sm:text-[68px] md:text-[72px] lg:[84] xl:text-[93px] leading-[100%] text-gradient-silver text-center md:text-left">
-              Designer &amp; Developer
-            </h1>
-            <!-- Deskripsi versi MOBILE (tetap di bawah H1 saat di HP) -->
-            <p class="flex text-white text-center sm:w-[300px] sm:mx-auto md:hidden">
-              I design intuitive digital experiences that connect people, products, and brands.
-            </p>
+
+        <!-- Text Hero (Kolom Kiri) -->
+        <div class="flex flex-col gap-[24px] md:justify-between z-10">
+          <!-- Grup Atas: Greeting + Judul + Tombol -->
+          <div class="flex flex-col gap-[24px]">
+            <div class="flex flex-col gap-2 justify-center p-2 mt-4 lg:mt-0 lg:p-0">
+              <p class="text-white text-center md:text-left md:text-xl">Hallo, I'm Adi Rizki</p>
+              <h1
+                class="font-clash font-medium text-[40px] sm:text-[68px] md:text-[72px] lg:[84] xl:text-[93px] leading-[100%] text-gradient-silver text-center md:text-left">
+                Designer &amp; Developer
+              </h1>
+              <!-- Deskripsi versi MOBILE (tetap di bawah H1 saat di HP) -->
+              <p class="flex text-white text-center sm:w-[300px] sm:mx-auto md:hidden">
+                I design intuitive digital experiences that connect people, products, and brands.
+              </p>
+            </div>
+            <a href="#"
+              class="flex w-fit px-[16px] py-[8px] md:px-7 md:py-3.5 bg-orange-500 text-black font-medium rounded-[8px] justify-center mx-auto md:mx-0 hover:bg-orange-300 transition">
+              Hire Me
+            </a>
           </div>
-          <a href="#"
-            class="flex w-fit px-[16px] py-[8px] md:px-7 md:py-3.5 bg-orange-500 text-black font-medium rounded-[8px] justify-center mx-auto md:mx-0 hover:bg-orange-300 transition">
-            Hire Me
+
+          <!-- Deskripsi versi DESKTOP (muncul di pojok kiri bawah sejajar statistik) -->
+          <p class="hidden md:block text-white/80 text-sm max-w-sm leading-relaxed">
+            I design intuitive digital experiences that connect people, products, and brands.
+          </p>
+        </div>
+
+        <!-- Statistic (Kolom Kanan Bawah) -->
+        <div class="grid grid-cols-3 divide-x divide-neutral-800 text-white py-6 md:py-0 z-10 md:self-end">
+          <div class="flex flex-col gap-1">
+            <span class="font-clash text-xl lg:text-4xl font-semibold text-center text-white">4+</span>
+            <p class="font-clash text-[8px] lg:text-xs text-center text-white/80">Years of experience</p>
+          </div>
+          <div class="flex flex-col gap-1">
+            <span class="font-clash text-xl lg:text-4xl font-semibold text-center text-white">50+</span>
+            <p class="font-clash text-[8px] lg:text-xs text-center text-white/80">Project Completed</p>
+          </div>
+          <div class="flex flex-col gap-1">
+            <span class="font-clash text-xl lg:text-4xl font-semibold text-center text-white">20+</span>
+            <p class="font-clash text-[8px] lg:text-xs text-center text-white/80">Satisfied Clients</p>
+          </div>
+        </div>
+
+        <!-- Foto -->
+        <img src="src/assets/images/hero-avatar.png" alt="Adi Rizki"
+          class="absolute place-items-center bottom-0 right-3 sm:w-[400px] sm:right-30 md:w-[500px] md:right-[15px] lg:right-8 lg:w-[50%] lg:max-w-[630px] object-cover pointer-events-none">
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section>
+    <div class="p-4 mx-auto max-w-7xl lg:grid grid-cols-2 gap-4">
+      <div>
+        <h2 class="font-clash text-2xl font-medium leading-[120%]">Design Driven By <br>
+          Purpose & Precision</h2>
+      </div>
+      <div class="">
+        <p class="mt-2">From early ideas to polished interfaces, I turn complex challenges into clear, purposeful
+          designs that put people first.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Featured Works Section -->
+  <section id="projects" class="px-4 pt-16 pb-48 md:pb-16 mx-auto max-w-7xl">
+
+    <!-- 1. HEADER SECTION: Sticky di mobile agar diam di atas -->
+    <div class="sticky top-20 md:static bg-white/95 backdrop-blur-sm pb-6 pt-2 z-10 text-center max-w-xl mx-auto">
+      <h2 class="font-clash text-4xl md:text-5xl font-medium tracking-tight text-neutral-900 leading-[1.05]">
+        Featured<br class="md:hidden" /> Works
+      </h2>
+      <p class="mt-3 text-neutral-600 leading-relaxed">
+        A selection of UI/UX and visual design projects, shaped by thoughtful ideas, clear communication, and attention
+        to detail.
+      </p>
+    </div>
+
+    <!-- 2. CONTAINER CARDS: Selisih 50px tiap kartu di mobile, Grid 3 kolom di desktop -->
+    <div class="relative flex flex-col gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 mt-4">
+
+      <!-- CARD 1 (top-[280px]) -->
+      <article
+        class="project-card sticky top-[280px] md:static bg-white/5 backdrop-blur-md border border-neutral-200 rounded-[24px] p-4 z-20 transition-transform duration-300">
+        <div class="overflow-hidden rounded-2xl bg-neutral-100 aspect-[4/3]">
+          <img src="src/assets/images/project-1.png" alt="Project 1" class="w-full h-full object-cover" />
+        </div>
+        <div class="mt-4 flex items-end justify-between gap-3">
+          <div>
+            <h3 class=" text-neutral-900 leading-snug">
+              Nama Project Pertama
+            </h3>
+            <p class="text-xs text-neutral-500 mt-1">UI/UX Design</p>
+          </div>
+          <a href="#" aria-label="View Project"
+            class="shrink-0 w-11 h-11 rounded-xl bg-orange-500 hover:bg-orange-400 text-white flex items-center justify-center transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10" />
+            </svg>
           </a>
         </div>
+      </article>
 
-        <!-- Deskripsi versi DESKTOP (muncul di pojok kiri bawah sejajar statistik) -->
-        <p class="hidden md:block text-white/80 text-sm max-w-sm leading-relaxed">
-          I design intuitive digital experiences that connect people, products, and brands.
-        </p>
-      </div>
-
-      <!-- Statistic (Kolom Kanan Bawah) -->
-      <div class="grid grid-cols-3 divide-x divide-neutral-800 text-white py-6 md:py-0 z-10 md:self-end">
-        <div class="flex flex-col gap-1">
-          <span class="font-clash text-xl lg:text-4xl font-semibold text-center text-white">4+</span>
-          <p class="font-clash text-[8px] lg:text-xs text-center text-white/80">Years of experience</p>
+      <!-- CARD 2 (top-[330px]) -->
+      <article
+        class="project-card sticky top-[330px] md:static bg-white/5 backdrop-blur-md border border-neutral-200 rounded-[24px] p-4 z-30 transition-transform duration-300">
+        <div class="overflow-hidden rounded-2xl bg-neutral-100 aspect-[4/3]">
+          <img src="src/assets/images/project-2.png" alt="Project 2" class="w-full h-full object-cover" />
         </div>
-        <div class="flex flex-col gap-1">
-          <span class="font-clash text-xl lg:text-4xl font-semibold text-center text-white">50+</span>
-          <p class="font-clash text-[8px] lg:text-xs text-center text-white/80">Project Completed</p>
+        <div class="mt-4 flex items-end justify-between gap-3">
+          <div>
+            <h3 class="text-neutral-900 leading-snug">
+              Nama Project Kedua
+            </h3>
+            <p class="text-xs text-neutral-500 mt-1">Web Development</p>
+          </div>
+          <a href="#" aria-label="View Project"
+            class="shrink-0 w-11 h-11 rounded-xl bg-orange-500 hover:bg-orange-400 text-white flex items-center justify-center transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10" />
+            </svg>
+          </a>
         </div>
-        <div class="flex flex-col gap-1">
-          <span class="font-clash text-xl lg:text-4xl font-semibold text-center text-white">20+</span>
-          <p class="font-clash text-[8px] lg:text-xs text-center text-white/80">Satisfied Clients</p>
+      </article>
+
+      <!-- CARD 3 (top-[380px]) -->
+      <article
+        class="project-card sticky top-[380px] md:static bg-white/5 backdrop-blur-md border border-neutral-200 rounded-[24px] p-4 z-40 transition-transform duration-300">
+        <div class="overflow-hidden rounded-2xl bg-neutral-100 aspect-[4/3]">
+          <img src="src/assets/images/project-3.png" alt="Insura Mobile App" class="w-full h-full object-cover" />
         </div>
-      </div>
+        <div class="mt-4 flex items-end justify-between gap-3">
+          <div>
+            <h3 class="text-neutral-900 leading-snug">
+              Insura – Insurance Claims mobile app
+            </h3>
+            <p class="text-xs text-neutral-500 mt-1">Mobile Apps</p>
+          </div>
+          <a href="#" aria-label="View Project"
+            class="shrink-0 w-11 h-11 rounded-xl bg-orange-500 hover:bg-orange-400 text-white flex items-center justify-center transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10" />
+            </svg>
+          </a>
+        </div>
+      </article>
 
-      <!-- Foto -->
-      <img src="src/assets/images/hero-avatar.png" alt="Adi Rizki"
-        class="absolute place-items-center bottom-0 right-3 sm:w-[400px] sm:right-30 md:w-[500px] md:right-[15px] lg:right-8 lg:w-[50%] lg:max-w-[630px] object-cover pointer-events-none">
+      <!-- CARD 4 (top-[430px]) -->
+      <article
+        class="project-card sticky top-[430px] md:static bg-white/5 backdrop-blur-md border border-neutral-200 rounded-[24px] p-4 z-40 transition-transform duration-300">
+        <div class="overflow-hidden rounded-2xl bg-neutral-100 aspect-[4/3]">
+          <img src="src/assets/images/project-3.png" alt="Insura Mobile App" class="w-full h-full object-cover" />
+        </div>
+        <div class="mt-4 flex items-end justify-between gap-3">
+          <div>
+            <h3 class="text-neutral-900 leading-snug">
+              Insura – Insurance Claims mobile app
+            </h3>
+            <p class="text-xs text-neutral-500 mt-1">Mobile Apps</p>
+          </div>
+          <a href="#" aria-label="View Project"
+            class="shrink-0 w-11 h-11 rounded-xl bg-orange-500 hover:bg-orange-400 text-white flex items-center justify-center transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10" />
+            </svg>
+          </a>
+        </div>
+      </article>
+
     </div>
-  </div>
-</section>
-
-<!-- About Section -->
- <section>
-  <div class="p-4 mx-auto max-w-7xl lg:grid grid-cols-2 gap-4">
-    <div>
-      <h2 class="font-clash text-2xl font-medium leading-[120%]">Design Driven By <br>
-         Purpose & Precision</h2>
-    </div>
-    <div class="">
-      <p class="mt-2">From early ideas to polished interfaces, I turn complex challenges into clear, purposeful designs that put people first.</p>
-    </div>
-  </div>
-
- </section>
+  </section>
 
 
 
-<script>
-  const menuBtn = document.getElementById("menu-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
-  const iconOpen = document.getElementById("icon-open");
-  const iconClose = document.getElementById("icon-close");
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const iconOpen = document.getElementById("icon-open");
+    const iconClose = document.getElementById("icon-close");
 
-  menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-    iconOpen.classList.toggle("hidden");
-    iconClose.classList.toggle("hidden");
-  });
-
-  // Otomatis tutup menu saat salah satu link diklik
-  mobileMenu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      mobileMenu.classList.add("hidden");
-      iconOpen.classList.remove("hidden");
-      iconClose.classList.add("hidden");
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      iconOpen.classList.toggle("hidden");
+      iconClose.classList.toggle("hidden");
     });
-  });
-</script>
+
+    // Otomatis tutup menu saat salah satu link diklik
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        iconOpen.classList.remove("hidden");
+        iconClose.classList.add("hidden");
+      });
+    });
+  </script>
 </body>
 
 </html>
